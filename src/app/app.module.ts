@@ -15,6 +15,9 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { MainService } from './services/main.service';
 import { HelperModule } from './pipes/helpers.module';
 import { UserService } from './services/user.service';
+import { Test1Module } from './modules/test1/test1.module';
+
+
 
 
 @NgModule({
@@ -29,7 +32,8 @@ import { UserService } from './services/user.service';
     MainModule,
     LoginModule,
     BrowserAnimationsModule,
-    QueueModule
+    QueueModule,
+    Test1Module
   ],
   providers: [
     MainService,
