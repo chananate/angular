@@ -1,0 +1,41 @@
+<ol class="breadcrumb breadcrumb-arrow font-trirong">
+  <li><a href="javascript://" [routerLink]="['/']">Home</a></li>
+  <li><a href="javascript://">Patient</a></li>
+</ol>
+
+<clr-datagrid>
+  <clr-dg-column>HN</clr-dg-column>
+  <clr-dg-column>Person-ID</clr-dg-column>
+  <clr-dg-column>Name</clr-dg-column>
+  <clr-dg-column>#</clr-dg-column>
+
+  <clr-dg-row *clrDgItems="let patient of patientList" [clrDgItem]="patient">
+    <clr-dg-cell>{{patient.hn}}</clr-dg-cell>
+    <clr-dg-cell>{{patient.pid}}</clr-dg-cell>
+    <clr-dg-cell>{{patient.title}}{{patient.name}} {{patient.surname}}</clr-dg-cell>
+    <clr-dg-cell>
+      <button class="btn btn-primary btn-sm" (click)="onEdit(patient)">Add</button>
+    </clr-dg-cell>
+  </clr-dg-row>
+
+</clr-datagrid>
+
+<clr-modal [(clrModalOpen)]="modalEdit" [clrModalStaticBackdrop]="false" [clrModalSize]="'lg'">
+  <h3 class="modal-title">patient</h3>
+  <div class="modal-body">
+    <form clrForm>
+      <clr-input-container>
+          <label>Field 1 label</label>
+          <input clrInput type="text" [(ngModel)]="model" name="example" />
+      </clr-input-container>
+      <clr-input-container>
+          <label>Field 2 label</label>
+          <input clrInput type="text" [(ngModel)]="model" name="example" />
+      </clr-input-container>
+  </form>
+  </div>
+  <div class="modal-footer">
+      <button type="button" class="btn btn-outline" (click)="modalEdit = false">Cancel</button>
+      <button type="button" class="btn btn-primary" (click)="onSave()"><clr-icon shape="success-standard"></clr-icon> save</button>
+  </div>
+</clr-modal>
