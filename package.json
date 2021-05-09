@@ -26,7 +26,7 @@
     "@clr/ui": "^1.1.2",
     "@webcomponents/custom-elements": "^1.2.1",
     "core-js": "^2.6.2",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.21",
     "moment": "^2.23.0",
     "numeral": "^2.0.6",
     "rxjs": "~6.4.0",
